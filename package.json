@@ -1,0 +1,30 @@
+{
+  "name": "memoirs",
+  "version": "1.0.0",
+  "description": "Notation-based memoir automation program",
+  "scripts": {
+    "weekly": "node src/weekly.js"
+  },
+  "keywords": [
+    "memoirs",
+    "notion",
+    "openai"
+  ],
+  "author": "ethan-heo",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "dotenv": "^16.4.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "@tryfabric/martian": "^1.2.4",
+    "notion-to-md": "^3.1.1",
+    "openai": "^4.77.0"
+  }
+}
