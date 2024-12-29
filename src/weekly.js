@@ -20,6 +20,12 @@ async function generate() {
       date: { this_week: {} },
     },
   });
+
+  if (!contents) {
+    console.log("No contents found for this week.");
+    return;
+  }
+
   const answers = await memoirs.ask(contents);
 
   await memoirs.createNotionPage("주간 회고", answers);
