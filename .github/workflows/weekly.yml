@@ -1,9 +1,13 @@
 name: Weekly Scheduled Workflow
 
 on:
-  schedule:
-    # 매주 금요일 오후 12시에 실행
-    - cron: "0 12 * * 5"
+  push:
+    branches:
+      - master
+# on:
+#   schedule:
+#     # 매주 금요일 오후 12시에 실행
+#     - cron: "0 12 * * 5"
 
 jobs:
   run-scheduled-task:
