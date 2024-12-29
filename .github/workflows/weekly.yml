@@ -21,15 +21,15 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Set Environment Variables
+      - name: Install PNPM
+        run: npm install -g pnpm
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Set Environment Variables and Run Task
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           OPEN_API_KEY: ${{ secrets.OPEN_API_KEY }}
-        run: |
-          echo "NOTION_API_KEY: $NOTION_API_KEY"
-          echo "NOTION_DATABASE_ID: $NOTION_DATABASE_ID"
-          echo "OPEN_API_KEY: $OPEN_API_KEY"
-
-      - name: Run task
-        run: echo "This action runs every Friday at 12:00 PM!"
+        run: pnpm weekly
