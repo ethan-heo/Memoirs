@@ -1,16 +1,12 @@
 name: Weekly Scheduled Workflow
 
 on:
-  push:
-    branches:
-      - master
-# on:
-#   schedule:
-#     # 매주 금요일 오후 12시에 실행
-#     - cron: "0 12 * * 5"
+  schedule:
+    # 매주 금요일 오후 12시에 실행
+    - cron: "0 12 * * 0"
 
 jobs:
-  run-scheduled-task:
+  run-weekly-task:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
