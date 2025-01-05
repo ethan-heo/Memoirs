@@ -28,7 +28,7 @@ async function generate() {
 
   const answers = await memoirs.ask(contents);
 
-  await memoirs.createNotionPage("주간 회고", answers);
+  await memoirs.createNotionPage("주간 회고", answers.choices[0].message.content);
 }
 
 generate();
